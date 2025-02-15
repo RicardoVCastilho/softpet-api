@@ -98,8 +98,9 @@ Atualizar os dados de um paciente específico.
 DELETE /pet/:id
 Excluir um pet do sistema.
 
-## 🔐 Segurança
-Certifique-se de que a conexão com o banco de dados MongoDB esteja configurada corretamente, incluindo a verificação de IP no MongoDB Atlas. Para mais informações, consulte a documentação do MongoDB Atlas sobre IP Whitelisting.
+## Confira a API por si mesmo:
+Esta API teve seu deploy feito na plataforma gratuita Render.
+[Confira você mesmo e teste as rotas.](https://softpet-api.onrender.com/)
 
 ## 📋 Licença
 Este projeto está licenciado sob a MIT License.
