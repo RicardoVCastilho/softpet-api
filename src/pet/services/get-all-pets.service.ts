@@ -8,9 +8,14 @@ export class GetAllPetsService {
         private readonly getAllPetsRepositorie: GetAllPetsRepositorie,
     ) {}
 
-    async execute(): Promise<any> {
+    // Agora aceitamos os parâmetros 'page' e 'limit' para aplicar a paginação
+    async execute(page: number = 1, limit: number = 8): Promise<any> {
         try {
-            const pets = await this.getAllPetsRepositorie.execute();
+            // Calculando o índice de onde começar a busca no banco de dados
+            const offset = (page - 1) * limit;
+            
+            // Fazendo a consulta paginada
+            const pets = await this.getAllPetsRepositorie.executePaginated(offset, limit);
             
             if (pets.length === 0) {
                 throw new HttpException(
@@ -23,6 +28,10 @@ export class GetAllPetsService {
                 statusCode: HttpStatus.OK,
                 message: 'Pets encontrados com sucesso!',
                 data: pets,
+                meta: {
+                    page,
+                    limit,
+                },
             };
         } catch (error) {
             throw new HttpException(
