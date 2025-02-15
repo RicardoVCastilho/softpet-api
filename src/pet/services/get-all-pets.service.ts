@@ -9,7 +9,7 @@ export class GetAllPetsService {
   ) {}
 
   // Agora aceitamos os parâmetros 'page' e 'limit' para aplicar a paginação
-  async execute(page: number = 1, limit: number = 8): Promise<any> {
+  async execute(page: number = 1, limit: number = 6): Promise<any> {
     try {
       // Garantindo que a página seja um número válido e positivo
       page = Math.max(page, 1);
