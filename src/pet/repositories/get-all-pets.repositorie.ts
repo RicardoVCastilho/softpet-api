@@ -18,7 +18,7 @@ export class GetAllPetsRepositorie {
     }
 
     // Para obter o total de pets, o que pode ser útil para exibir a contagem de páginas
-    async count(): Promise<number> {
-        return this.petModel.countDocuments().exec();
-    }
+    async countPets(): Promise<number> {
+        return this.petModel.countDocuments(); // ou equivalente no seu banco de dados
+      }
 }
