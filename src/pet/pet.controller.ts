@@ -23,7 +23,7 @@ export class PetController {
 
     // Alteração aqui: agora aceitamos 'page' e 'limit' como parâmetros de query
     @Get('all-pets')
-    async getAllPets(@Query('page') page: number = 1, @Query('limit') limit: number = 8) {
+    async getAllPets(@Query('page') page: number = 1, @Query('limit') limit: number = 6) {
         return await this.getAllPetsService.execute(page, limit);
     }
 
